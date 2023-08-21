@@ -18,7 +18,7 @@
  * Description:       Simplify your email sending process and enhance deliverability using WP Mailify's user-friendly interface
  * Version:           1.0.0
  * Author:            Sumit Kumar
- * Author URI:        https://github.com/princegup42
+ * Author URI:        https://github.com/princegup4
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       wp-mailify

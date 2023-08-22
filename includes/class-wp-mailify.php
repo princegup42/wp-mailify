@@ -155,6 +155,8 @@ class Wp_Mailify {
 		$plugin_admin = new Wp_Mailify_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
+		// Adding admin options page via 'admin_menu' hook
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'wp_mailify_add_options_page' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
 	}

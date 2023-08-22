@@ -78,6 +78,30 @@ class Wp_Mailify_Admin {
 	}
 
 	/**
+	 * Add the WP Mailify options page.
+	 *
+	 * @return void
+	 */
+	public function wp_mailify_add_options_page() {
+		add_options_page(
+			__('WP Mailify Settings', 'wp-mailify'),      // Page title
+			__('WP Mailify', 'wp-mailify'),               // Menu title
+			'manage_options',                            // Capability required to access the page
+			$this->plugin_name,                        // Menu slug
+			array($this, 'wp_mailify_display_plugin_setup_page')                // Callback function to display the page content
+		);
+	}
+
+	/**
+	 * Render the settings page for this plugin.
+	 *
+	 * @since    1.0.0
+	 */
+	public function wp_mailify_display_plugin_setup_page() {
+		include_once( 'partials/wp-mailify-admin-display.php' );
+	}
+
+	/**
 	 * Register the JavaScript for the admin area.
 	 *
 	 * @since    1.0.0

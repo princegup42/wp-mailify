@@ -235,7 +235,7 @@ class Wp_Mailify_Admin {
 
 	public function smtp_password_callback() {
 		printf(
-			'<input class="regular-text" type="text" name="wp_mailify_option_name[smtp_password]" id="smtp_password" value="%s">',
+			'<input class="regular-text" type="password" name="wp_mailify_option_name[smtp_password]" id="smtp_password" value="%s">',
 			isset( $this->wp_mailify_options['smtp_password'] ) ? esc_attr( $this->wp_mailify_options['smtp_password']) : ''
 		);
 	}

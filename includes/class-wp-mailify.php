@@ -117,6 +117,11 @@ class Wp_Mailify {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp-mailify-admin.php';
 
 		/**
+		 * The class responsible for configuring SMTP settings in the plugin.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-wp-mailify-smtp-configurator.php';
+
+		/**
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
@@ -153,6 +158,7 @@ class Wp_Mailify {
 	private function define_admin_hooks() {
 
 		$plugin_admin = new Wp_Mailify_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_smtp_configurator = WP_Mailify_SMTP_Configurator::get_instance();
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		// Adding admin options page via 'admin_menu' hook
